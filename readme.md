@@ -108,18 +108,18 @@ sleep:
 開啟另一 Terminal 連線 `$ arm-none-eabi-gdb` ，再輸入 `target remote localhost:1234` 連接，輸入兩次的 `ctrl + x` 再輸入 `2`, 開啟 Register 以及指令，並且輸入 `si` 單步執行觀察。
 當執行到 `0xe` 的 `push {r0,r1,r2} ` 時， `pc` 跳轉至 `0x10` ，`sp` 位置從 `0x20000100` 指到 `0x200000f4`，一共向下堆疊3個暫存器  
 
-`0x200000fc` 存 `r2`暫存器的資料
-`0x200000f8` 存 `r1`暫存器的資料
-`0x200000f4` 存 `r0`暫存器的資料
+`0x200000fc` 存 `r2`暫存器的資料  
+`0x200000f8` 存 `r1`暫存器的資料  
+`0x200000f4` 存 `r0`暫存器的資料  
 儲存的順序為 `r2` `r1` `r0`
 
 ![](https://github.com/EasonDowYo/ESEmbedded_HW02/blob/master/img/push_r0_r2.png)
       
 當執行到 `0x10` 的 `pop {r3,r4,r5} ` 時， `pc` 跳轉至 `0x12` ，`sp` 位置從 `0x200000f4` 指到 `0x20000100`
 
-`0x200000fc` 位址中的資料存到 `r5`
-`0x200000f8` 位址中的資料存到 `r4`
-`0x200000f4` 位址中的資料存到 `r3`
+`0x200000fc` 位址中的資料存到 `r5`  
+`0x200000f8` 位址中的資料存到 `r4`  
+`0x200000f4` 位址中的資料存到 `r3`  
 取出順序為 `r5` `r4` `r3`
 
 ![](https://github.com/EasonDowYo/ESEmbedded_HW02/blob/master/img/pop_r3_r5.png)
