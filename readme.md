@@ -113,7 +113,7 @@ sleep:
 `0x200000f4` 存 `r0`暫存器的資料
 儲存的順序為 `r2` `r1` `r0`
 
-![](https://github.com/EasonDowYo/ESEmbedded_HW02/img/push_r0_r2.png)
+![](https://github.com/EasonDowYo/ESEmbedded_HW02/blob/master/img/push_r0_r2.png)
       
 當執行到 `0x10` 的 `pop {r3,r4,r5} ` 時， `pc` 跳轉至 `0x12` ，`sp` 位置從 `0x200000f4` 指到 `0x20000100`
 
@@ -122,11 +122,11 @@ sleep:
 `0x200000f4` 位址中的資料存到 `r3`
 取出順序為 `r5` `r4` `r3`
 
-![](https://github.com/EasonDowYo/ESEmbedded_HW02/img/pop_r3_r5.png)
+![](https://github.com/EasonDowYo/ESEmbedded_HW02/blob/master/img/pop_r3_r5.png)
 
 當執行到 `0x18` 的 `push {r1,r2,r0} ` 時，反組意時就會將暫存器的順序擺正，改為 `push {r0,r1,r2} `
 
-![](https://github.com/EasonDowYo/ESEmbedded_HW02/img/push_r1_r2_r0.png)
+![](https://github.com/EasonDowYo/ESEmbedded_HW02/blob/master/img/push_r1_r2_r0.png)
 
 ## 3. 結果與討論
-1. 
+記憶體存與讀會採用後進先出、先進後出的原則
